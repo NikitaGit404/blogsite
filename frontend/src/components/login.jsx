@@ -16,16 +16,19 @@ const Login = () => {
   }
 
   const handleLogin = async () => {
-    const res = await fetch(process.env.REACT_APP_BASE_API_URL + "login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: user,
-        password: password,
-      }),
-    });
+    const res = await fetch(
+      process.env.REACT_APP_BASE_API_URL + "blogposts/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: user,
+          password: password,
+        }),
+      }
+    );
 
     if (res.status === 200) {
       setIsLoggedIn(true);

@@ -33,10 +33,13 @@ const CreateBlog = () => {
     formData.append("author", sessionStorage.getItem("user"));
 
     try {
-      const res = await fetch(process.env.REACT_APP_BASE_API_URL, {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        process.env.REACT_APP_BASE_API_URL + "blogposts/",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
       const data = await res.json();
 
       if (res.status === 201) {

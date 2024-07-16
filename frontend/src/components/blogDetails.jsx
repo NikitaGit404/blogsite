@@ -31,7 +31,9 @@ const BlogDetails = () => {
           <div className="lg:h-96 h-42">
             <img
               className="w-full h-full object-cover rounded-lg"
-              src={`http://localhost:8000${currentBlog.cover_picture}`}
+              src={`${
+                process.env.REACT_APP_BASE_API_URL + currentBlog.cover_picture
+              }`}
               alt=""
             />
           </div>

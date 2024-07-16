@@ -10,7 +10,7 @@ const Home = () => {
   }, []);
 
   const handleGetBlogs = async () => {
-    const res = await fetch(process.env.REACT_APP_BASE_API_URL, {
+    const res = await fetch(process.env.REACT_APP_BASE_API_URL + "blogposts/", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

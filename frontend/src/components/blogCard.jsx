@@ -34,10 +34,13 @@ const BlogCard = ({ blog }) => {
     if (image) formData.append("cover_picture", image);
     formData.append("author", sessionStorage.getItem("user"));
     try {
-      const res = await fetch(process.env.REACT_APP_BASE_API_URL + blog.id, {
-        method: "PUT",
-        body: formData,
-      });
+      const res = await fetch(
+        process.env.REACT_APP_BASE_API_URL + "blogposts/" + blog.id,
+        {
+          method: "PUT",
+          body: formData,
+        }
+      );
       const data = await res.json();
 
       if (res.status === 200) {
@@ -54,9 +57,12 @@ const BlogCard = ({ blog }) => {
 
   const handleDeleteBlog = async (id) => {
     try {
-      const res = await fetch(process.env.REACT_APP_BASE_API_URL + id, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        process.env.REACT_APP_BASE_API_URL + "blogposts/" + id,
+        {
+          method: "DELETE",
+        }
+      );
 
       if (res.status === 204) {
         const newBlogData = blogData.filter((item) => item.id !== id);
@@ -74,7 +80,7 @@ const BlogCard = ({ blog }) => {
         <div className="relative">
           <img
             className="rounded-t-lg h-40 w-full object-cover"
-            src={`http://localhost:8000${blog.cover_picture}`}
+            src={`${process.env.REACT_APP_BASE_API_URL + blog.cover_picture}`}
             alt=""
           />
           <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded">
