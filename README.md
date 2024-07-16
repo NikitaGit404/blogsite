@@ -6,7 +6,6 @@ This project involves developing a blogging application(Blogsite) with a React.j
 - A "My Blogs" page displaying blogs from a particular user.
 Functionality to view, create, edit, and delete blogs.
 Project is live on: http://dmkuaaz3neqb1.cloudfront.net/
-Github: https://github.com/NikitaGit404/roulettech<br />
 
 API’s live:
 - Login - POST
